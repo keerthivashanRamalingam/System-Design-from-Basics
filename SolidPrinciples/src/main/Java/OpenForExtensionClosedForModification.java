@@ -1,10 +1,20 @@
 /*
-*  What I have observed in open for extension closed for modification is that the code violation did not comes
-*  under the inheritance or abstraction it's between 2 classes.But the liskov and interafce for segregation
-*  is for inheritance and abstraction.(only for remembering purpose)
-*
-*
-* */
+  What I have observed in open for extension closed for modification is that the code violation did not comes
+  under the inheritance or abstraction it's between 2 classes.But the liskov and interafce for segregation
+  is for inheritance and abstraction.(only for remembering purpose)
+*/
+
+/*
+   What it means:
+        You should be able to add new functionality without altering existing, working code.
+   Think of it like adding a new app to your phone without having to rewrite the phone's operating system.
+
+   How to spot it in code review:
+        Look for large if-else or switch statements that might need to grow every time a new variant
+   of a feature is introduced.
+*/
+
+
 class Discount{
     public double applyDiscount(double amount) {
         return amount * 0.1;
@@ -43,11 +53,14 @@ class Customer{
             return amount; // No discount
         }
     }
-
-
 }
-public class OpenForExtensionClosedForModification {
 
+//Non-Violatied code
+//Here we no need to check for instance and no need to change this method if a new discount method will be implemented.
+public class OpenForExtensionClosedForModification {
+    public double applyDiscount(Discount discount, double amount){
+        return discount.applyDiscount(amount);
+    }
 }
 
 

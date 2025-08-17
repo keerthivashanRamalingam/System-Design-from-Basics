@@ -6,8 +6,15 @@
 */
 
 
+/*
+    What it means:
+        If you have a class A and a class B inherits from A, you should be able to use an
+    object of B anywhere an object of A is expected, without breaking the program or producing unexpected behavior.
 
-
+    How to spot it in code review:
+        Look for subclasses that throw unexpected exceptions, return null when the superclass promises a value, or drastically
+    alter the behavior expected from the superclass contract.
+*/
 
 public class LiskovSubstitution {
     public static void main(String[] args) {

@@ -5,6 +5,17 @@
 */
 
 
+/*
+    What it means:
+     Instead of one large interface, create smaller, more specific interfaces tailored
+     to what individual clients need.
+
+    How to spot it in code review:
+        Look for an interface with many methods, where its implementers often
+    have empty method bodies, throw UnsupportedOperationException, or comment out sections because they
+    don't use all the methods.
+*/
+
 //Violated code
 interface commonInterfaceForAll {
     void work();
