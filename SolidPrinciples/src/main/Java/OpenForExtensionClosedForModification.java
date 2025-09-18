@@ -15,6 +15,25 @@
 */
 
 
+//Violated code
+class Customer{
+    Discount discount;
+    public double calculate(String customerType, double amount) {
+        if (customerType.equals("Regular")) {
+            return amount * 0.9; // 10% discount
+        }
+        else if (customerType.equals("Premium")) {
+            return amount * 0.8; // 20% discount
+        }
+        else if (customerType.equals("Gold")) {
+            return amount * 0.7; // 30% discount
+        }
+        else {
+            return amount; // No discount
+        }
+    }
+}
+
 class Discount{
     public double applyDiscount(double amount) {
         return amount * 0.1;
@@ -36,24 +55,7 @@ class PremiumDiscount extends Discount {
 }
 
 
-//Violated code
-class Customer{
-    Discount discount;
-    public double calculate(String customerType, double amount) {
-        if (customerType.equals("Regular")) {
-            return amount * 0.9; // 10% discount
-        }
-        else if (customerType.equals("Premium")) {
-            return amount * 0.8; // 20% discount
-        }
-        else if (customerType.equals("Gold")) {
-            return amount * 0.7; // 30% discount
-        }
-        else {
-            return amount; // No discount
-        }
-    }
-}
+
 
 //Non-Violatied code
 //Here we no need to check for instance and no need to change this method if a new discount method will be implemented.
